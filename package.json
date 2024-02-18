@@ -10,7 +10,6 @@
     "import": "./dist/index.mjs",
     "require": "./dist/index.cjs"
   },
-  "private": true,
   "scripts": {
     "build": "tsc-multi",
     "clean": "tsc-multi --clean",
