@@ -1,0 +1,35 @@
+{
+  "name": "react-fragment-portal",
+  "version": "0.0.1",
+  "description": "Use React.createPortal without a container element",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.cjs"
+  },
+  "private": true,
+  "scripts": {
+    "build": "tsc-multi",
+    "clean": "tsc-multi --clean",
+    "lint": "oxlint -c ./eslintrc.json -D all; dprint fmt",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.56",
+    "@types/react-dom": "^18.2.19",
+    "dprint": "^0.45.0",
+    "jest": "^29.7.0",
+    "oxlint": "^0.2.9",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tsc-multi": "^1.1.0",
+    "typescript": "^5.3.3"
+  }
+}
