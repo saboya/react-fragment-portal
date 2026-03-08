@@ -60,7 +60,7 @@ export const FragmentPortal: React.FC<React.PropsWithChildren<Props>> = (props) 
     props.placePortalContainer(documentFragment)
 
     // Try to get a reference to the parent element
-    const parentElement = childNodes.at(0)?.parentElement ?? undefined
+    const parentElement = childNodes[0]?.parentElement ?? undefined
 
     if (parentElement !== undefined) {
       for (const descriptor of eventListenersRef.current) {
