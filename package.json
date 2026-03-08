@@ -13,7 +13,8 @@
   "scripts": {
     "build": "tsc-multi",
     "clean": "tsc-multi --clean",
-    "lint": "oxlint -c ./eslintrc.json -D all; dprint fmt",
+    "lint": "oxlint -c ./.oxlintrc.json -D all && biome check . --linter-enabled=false",
+    "format": "biome format --write .",
     "test": "vitest run --project unit",
     "test:browser": "vitest run --project browser",
     "test:all": "vitest run"
@@ -28,7 +29,7 @@
     "@types/react": "^18.2.56",
     "@types/react-dom": "^18.2.19",
     "@vitest/browser": "2.1.9",
-    "dprint": "^0.45.0",
+    "@biomejs/biome": "^2.4.6",
     "jsdom": "^26.1.0",
     "oxlint": "^0.2.9",
     "playwright": "^1.52.0",

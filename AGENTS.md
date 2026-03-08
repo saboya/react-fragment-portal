@@ -28,7 +28,8 @@ This is intended for browser-only DOM augmentation use cases (for example, Chrom
 
 - `npm run build` - build CJS + ESM outputs via `tsc-multi`
 - `npm test` - run Vitest tests
-- `npm run lint` - run oxlint + dprint formatting
+- `npm run lint` - run oxlint + biome checks
+- `npm run format` - format files with biome
 
 ## Testing expectations
 

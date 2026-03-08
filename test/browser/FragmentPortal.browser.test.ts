@@ -1,6 +1,6 @@
 import React from 'react'
-import { cleanup, render } from 'vitest-browser-react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { cleanup, render } from 'vitest-browser-react'
 
 import { FragmentPortal } from '../../src/FragmentPortal'
 

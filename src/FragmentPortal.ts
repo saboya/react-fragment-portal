@@ -21,21 +21,19 @@ export const FragmentPortal: React.FC<React.PropsWithChildren<Props>> = (props) 
       get(target, prop: keyof ShadowRoot, _) {
         switch (prop) {
           case 'addEventListener': {
-            return function(
+            return function (
               type: keyof HTMLElementEventMap,
               listener: EventListenerOrEventListenerObject,
               options: AddEventListenerOptions,
             ) {
               eventListenersRef.current.push([type, listener, options])
-            }
-              .bind(target)
+            }.bind(target)
           }
           case 'removeChild': {
-            return function(child: Node) {
+            return function (child: Node) {
               // We'll deal with cleaning up the nodes later, so just return the child
               return child
-            }
-              .bind(target)
+            }.bind(target)
           }
         }
 
