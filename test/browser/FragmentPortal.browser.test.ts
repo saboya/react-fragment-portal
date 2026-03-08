@@ -17,8 +17,8 @@ describe('FragmentPortal (browser)', () => {
     document.body.innerHTML = ''
   })
 
-  it('injects list items without an extra wrapper', () => {
-    render(
+  it('injects list items without an extra wrapper', async () => {
+    await render(
       React.createElement(
         FragmentPortal,
         { placePortalContainer: (fragment: DocumentFragment) => menu.append(fragment) },
@@ -34,7 +34,7 @@ describe('FragmentPortal (browser)', () => {
   it('keeps click handlers wired in real browser mode', async () => {
     const onClick = vi.fn()
 
-    const screen = render(
+    const screen = await render(
       React.createElement(
         FragmentPortal,
         { placePortalContainer: (fragment: DocumentFragment) => menu.append(fragment) },
