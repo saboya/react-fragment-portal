@@ -21,6 +21,7 @@ export const FragmentPortal: React.FC<React.PropsWithChildren<Props>> = (props) 
       get(target, prop: keyof ShadowRoot, _) {
         switch (prop) {
           case 'addEventListener': {
+            // biome-ignore lint/complexity/useArrowFunction: Use `function` so we can bind it
             return function (
               type: keyof HTMLElementEventMap,
               listener: EventListenerOrEventListenerObject,
@@ -30,6 +31,7 @@ export const FragmentPortal: React.FC<React.PropsWithChildren<Props>> = (props) 
             }.bind(target)
           }
           case 'removeChild': {
+            // biome-ignore lint/complexity/useArrowFunction: Use `function` so we can bind it
             return function (child: Node) {
               // We'll deal with cleaning up the nodes later, so just return the child
               return child
@@ -50,6 +52,7 @@ export const FragmentPortal: React.FC<React.PropsWithChildren<Props>> = (props) 
     return new Proxy(documentFragment, handler)
   }, [documentFragment])
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: We don't need this
   React.useLayoutEffect(() => {
     // Acuire reference to the child nodes of the document fragment before attaching it to the DOM
     const childNodes = Array.from(documentFragment.childNodes)
